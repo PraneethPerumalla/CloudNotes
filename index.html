@@ -1,2 +1,53 @@
-/* Lines 1-23 omitted */
-// ...existing code...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudNotes - Serverless Notes App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CloudNotes</h1>
+            <p>Modern Serverless Architecture</p>
+        </header>
+
+        <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search notes by title or content...">
+        </section>
+
+        <section class="note-input">
+            <input type="hidden" id="noteId">
+            <div class="input-header">
+                <input type="text" id="noteTitle" placeholder="Note Title..." autocomplete="off">
+                <select id="noteCategory">
+                    <option value="General">General</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Idea">Idea</option>
+                </select>
+            </div>
+            <textarea id="noteContent" placeholder="Write your note here..." rows="4"></textarea>
+            <div class="input-footer">
+                <label class="pin-checkbox">
+                    <input type="checkbox" id="notePinned"> Pin to Top
+                </label>
+                <button id="addBtn">Add Note</button>
+                <button id="cancelBtn" style="display: none; background: #475569;">Cancel</button>
+            </div>
+        </section>
+
+        <section class="notes-display">
+            <h2>Your Notes</h2>
+            <div id="notesList" class="notes-grid">
+                <!-- Notes will appear here -->
+                <div class="loader" id="loader"></div>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
